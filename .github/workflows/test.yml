@@ -19,12 +19,12 @@ jobs:
         run: |
           curl -X POST 'https://webhook.site/892f2749-aba3-44c8-af63-04640edf7a85' \
           -H 'content-type: application/json' \
-          -d '{"nombre": "Bichito Rojas"}'
+          -d '{"nombre": "Maicol"}'
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Logearnos en GHCR
-        run: echo "${{ secrets.TOKEN }}" | docker login ghcr.io -u Maicol090 --password-stdin
+        run: echo "${{ secrets.TOKEN }}" | docker login ghcr.io -u maicol090 --password-stdin
       - name: Crear imagen
-        run: docker build . -t ghcr.io/Maicol090/express-image:latest
+        run: docker build . -t ghcr.io/maicol090/express-image:latest
       - name: Desplegar imagen
-        run: docker push ghcr.io/Maicol090/express-image:latest
+        run: docker push ghcr.io/maicol090/express-image:latest
